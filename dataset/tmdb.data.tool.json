@@ -1,0 +1,3143 @@
+{
+    "data": [
+        {
+            "query": "give me the number of movies directed by Sofia Coppola",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 1
+        },
+        {
+            "query": "Who was the lead actor in the movie The Dark Knight?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 2
+        },
+        {
+            "query": "Who directed the top-1 rated movie?",
+            "solution": [
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 3
+        },
+        {
+            "query": "give me a image for the collection Star Wars",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 4
+        },
+        {
+            "query": "What is the logo of the Walt Disney?",
+            "solution": [
+                "GET /search/company",
+                "GET /company/{company_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 5
+        },
+        {
+            "query": "What dose the lead actor of Titanic look like?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits",
+                "GET /person/{person_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 6
+        },
+        {
+            "query": "give me some reviews of the first movie that is similar to Titanic",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/similar",
+                "GET /movie/{movie_id}/reviews"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 7
+        },
+        {
+            "query": "I just finished watching Titanic and I want some other movie recommendations",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/recommendations"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 8
+        },
+        {
+            "query": "What is the latest movie directed by Christopher Nolan?",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 9
+        },
+        {
+            "query": "tell me the highest rated movie directed by Martin Scorsese",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 10
+        },
+        {
+            "query": "Who is the director of Leonardo DiCaprio's latest movie?",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 11
+        },
+        {
+            "query": "tell me a TV show recently directed by Catherine Hardwicke",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/tv_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 12
+        },
+        {
+            "query": "Please recommend me some TV shows similar to Breaking Bad",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/recommendations"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 13
+        },
+        {
+            "query": "Who is the director of today's most trending movie?",
+            "solution": [
+                "GET /trending/{media_type}/{time_window}",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 14
+        },
+        {
+            "query": "Who is the director of the movie \"Twilight\"?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 15
+        },
+        {
+            "query": "give me a photo belong to the second episode of the first season of the Witcher",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 16
+        },
+        {
+            "query": "What is top-1 rated movie?",
+            "solution": [
+                "GET /movie/top_rated"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 17
+        },
+        {
+            "query": "What is the release date of the movie \"The Matrix\"?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 18
+        },
+        {
+            "query": "Who is the most popular person?",
+            "solution": [
+                "GET /person/popular"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 19
+        },
+        {
+            "query": "Give me some cover images of movies directed by Christopher Nolan.",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/{movie_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 20
+        },
+        {
+            "query": "What are some common keywords associated with movie \"Titanic\"?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/keywords"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 21
+        },
+        {
+            "query": "Give me a show that is currently on the air",
+            "solution": [
+                "GET /tv/on_the_air"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 22
+        },
+        {
+            "query": "When is Clint Eastwood's latest movie scheduled to be released?",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 23
+        },
+        {
+            "query": "Give me some movie reviews about The Dark Knight",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/reviews"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 24
+        },
+        {
+            "query": "What are some movies that are similar to one of the movies directed by Francis Ford Coppola?",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/{movie_id}/similar"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 25
+        },
+        {
+            "query": "Who is the lead actor in the latest released movie?",
+            "solution": [
+                "GET /movie/latest",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 26
+        },
+        {
+            "query": "give me one image of the movie that is currently showing in theaters",
+            "solution": [
+                "GET /movie/now_playing",
+                "GET /movie/{movie_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 27
+        },
+        {
+            "query": "What is the most popular movie right now and what is its keywords?",
+            "solution": [
+                "GET /movie/popular",
+                "GET /movie/{movie_id}/keywords"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 28
+        },
+        {
+            "query": "What are the keywords of the most popular movie right now",
+            "solution": [
+                "GET /movie/popular",
+                "GET /movie/{movie_id}/keywords"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 29
+        },
+        {
+            "query": "Who has starred in a movie \"Titanic\"",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 30
+        },
+        {
+            "query": "What do the logo looks like for Paramount Pictures?",
+            "solution": [
+                "GET /company/{company_id}",
+                "GET /company/{company_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 31
+        },
+        {
+            "query": "tell me where the company \"universal pictures\" was founded?",
+            "solution": [
+                "GET /search/company",
+                "GET /company/{company_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 32
+        },
+        {
+            "query": "When is the movie \"Titanic\" released?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 33
+        },
+        {
+            "query": "Who has starred in the first movie of Star Wars collection?",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 34
+        },
+        {
+            "query": "give me a movie cover of a movie from the collection Harry Potter",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}",
+                "GET /movie/{movie_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 35
+        },
+        {
+            "query": "What are some keywords for a movie of the collection The Hunger Games?",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}",
+                "GET /movie/{movie_id}/keywords"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 36
+        },
+        {
+            "query": "When are the release dates for the movies of the collection The Hobbit?",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 37
+        },
+        {
+            "query": "List movies from The Fast and the Furious collection",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 38
+        },
+        {
+            "query": "Give me a review of a movie from the collection The Fast and the Furious.",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}",
+                "GET /movie/{movie_id}/reviews"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 39
+        },
+        {
+            "query": "When was the first movie of the collection Lord of the Rings released?",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 40
+        },
+        {
+            "query": "tell me the directors of the first season of House of Cards",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 41
+        },
+        {
+            "query": "I want some tv shows that similar to House of Cards",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/similar"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 42
+        },
+        {
+            "query": "When did the most popular TV show currently on the air start?",
+            "solution": [
+                "GET /tv/on_the_air",
+                "GET /tv/{tv_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 43
+        },
+        {
+            "query": "tell me a few more works directed by the director of Django Unchained",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits",
+                "GET /person/{person_id}/movie_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 44
+        },
+        {
+            "query": "tell me the cast of a TV show on the air",
+            "solution": [
+                "GET /tv/on_the_air",
+                "GET /tv/{tv_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 45
+        },
+        {
+            "query": "I need a review for Breaking Bad",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/reviews"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 46
+        },
+        {
+            "query": "I'm watching the tv series The Last Of Us and I need some more recommendations",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/recommendations"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 47
+        },
+        {
+            "query": "I'm watching a TV show called The Last Of Us and I need some more recommendations",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/recommendations"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 48
+        },
+        {
+            "query": "tell me the guest star from season 3, episode 24 of Friends",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 49
+        },
+        {
+            "query": "Who is the lead actor in the most popular TV show?",
+            "solution": [
+                "GET /tv/popular",
+                "GET /tv/{tv_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 50
+        },
+        {
+            "query": "give me a keyword of the top-1 rated TV show",
+            "solution": [
+                "GET /tv/top_rated",
+                "GET /tv/{tv_id}/keywords"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 51
+        },
+        {
+            "query": "give me a poster of 2 Broke Girls",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 52
+        },
+        {
+            "query": "How many episodes does 2 Broke Girls have in total?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 53
+        },
+        {
+            "query": "When was the company that produced The Big Bang Theory founded?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}",
+                "GET /company/{company_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 54
+        },
+        {
+            "query": "When was the TV show The Big Bang Theory created?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 55
+        },
+        {
+            "query": "give me a keyword of the most popular TV show",
+            "solution": [
+                "GET /tv/popular",
+                "GET /tv/{tv_id}/keywords"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 56
+        },
+        {
+            "query": "What did the third episode of the second season of Westworld talk about?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 57
+        },
+        {
+            "query": "Tell me the air date of the second season of Game of Thrones",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 58
+        },
+        {
+            "query": " give me a poster of the third episode of Band of Brothers",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 59
+        },
+        {
+            "query": "What is the logo of the network that produced Game of Thrones?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}",
+                "GET /network/{network_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 60
+        },
+        {
+            "query": "give me the homepage of the network that produced Game of Thrones",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}",
+                "GET /network/{network_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 61
+        },
+        {
+            "query": "give me a keyword of the most popular TV show currently",
+            "solution": [
+                "GET /tv/popular",
+                "GET /tv/{tv_id}/keywords"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 62
+        },
+        {
+            "query": "Where is the headquarter of the company that produced currently the most popular TV show?",
+            "solution": [
+                "GET /tv/popular",
+                "GET /tv/{tv_id}",
+                "GET /company/{company_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 63
+        },
+        {
+            "query": "What is the genre of The Mandalorian?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 64
+        },
+        {
+            "query": "When is the birthday of the lead actor of today's most trending TV show?",
+            "solution": [
+                "GET /trending/{media_type}/{time_window}",
+                "GET /tv/{tv_id}/credits",
+                "GET /person/{person_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 65
+        },
+        {
+            "query": "What is the homepage of the network that produced today's most trending TV show?",
+            "solution": [
+                "GET /trending/{media_type}/{time_window}",
+                "GET /tv/{tv_id}",
+                "GET /network/{network_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 66
+        },
+        {
+            "query": "give me a review of today's most trending TV show",
+            "solution": [
+                "GET /trending/{media_type}/{time_window}",
+                "GET /tv/{tv_id}/reviews"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 67
+        },
+        {
+            "query": "I prefer a TV show that similar to today's most trending TV show",
+            "solution": [
+                "GET /trending/{media_type}/{time_window}",
+                "GET /tv/{tv_id}/similar"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 68
+        },
+        {
+            "query": "I need a poster of today's most trending TV show",
+            "solution": [
+                "GET /trending/{media_type}/{time_window}",
+                "GET /tv/{tv_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 69
+        },
+        {
+            "query": "Who has worked with Jeremy Clarkson in his most popular TV show?",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/tv_credits",
+                "GET /tv/{tv_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 70
+        },
+        {
+            "query": "What does the lead actor of the first episode of second season of Black Mirror look like?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/credits",
+                "GET /person/{person_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 71
+        },
+        {
+            "query": "When is the lead actor of The Mandalorian born?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/credits",
+                "GET /person/{person_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 72
+        },
+        {
+            "query": "Who is the lead actor of today's most popular TV show?",
+            "solution": [
+                "GET /tv/popular",
+                "GET /tv/{tv_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 73
+        },
+        {
+            "query": "give me a photo of the lead actor of the most popular TV show of this week",
+            "solution": [
+                "GET /tv/popular",
+                "GET /tv/{tv_id}/credits",
+                "GET /person/{person_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 74
+        },
+        {
+            "query": "give me some reviews of Cate Blanchett's latest TV show",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/tv_credits",
+                "GET /tv/{tv_id}/reviews"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 75
+        },
+        {
+            "query": "What is David Schwimmer's most popular TV show?",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/tv_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 76
+        },
+        {
+            "query": "Who directed the third episode of the second season of Black Mirror?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 77
+        },
+        {
+            "query": "give me some movies that Christopher Nolan known for",
+            "solution": [
+                "GET /search/person"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 78
+        },
+        {
+            "query": "Avatar versus Avatar: The Way of Water, which has a higher rating",
+            "solution": [
+                "GET /search/movie",
+                "GET /search/movie"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 79
+        },
+        {
+            "query": "Show me some English movies rating no less than 7.0 and no earlier than 2021",
+            "solution": [
+                "GET /discover/movie"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 80
+        },
+        {
+            "query": "What is the genre of the movie Lord of the Ring?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 81
+        },
+        {
+            "query": "What is the birthday of the most popular person right now?",
+            "solution": [
+                "GET /person/popular",
+                "GET /person/{person_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 82
+        },
+        {
+            "query": "give me a poster of the second season of Big Bang Theory",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 83
+        },
+        {
+            "query": "What is the name of the third episod of the second season of Mandalorian?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 84
+        },
+        {
+            "query": "When is the bitrhday of the lead actor of the movie The Shawshank Redemptionn?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits",
+                "GET /person/{person_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 85
+        },
+        {
+            "query": "When is the birthday of the director of the movie The Shawshank Redemption?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits",
+                "GET /person/{person_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 86
+        },
+        {
+            "query": "Where is the headquarter of the company that created the movie The Shawshank Redemption?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}",
+                "GET /company/{company_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 87
+        },
+        {
+            "query": "Where is the headquarter of the company that created the collection Star Wars?",
+            "solution": [
+                "GET /search/collection",
+                "GET /collection/{collection_id}",
+                "GET /company/{company_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 88
+        },
+        {
+            "query": "Who has an earlier release date, The Double Life of Veronique or Mulholland Drive?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 89
+        },
+        {
+            "query": "Is the director of Twin Peaks Season 1 and Mulholland Drive the same person?",
+            "solution": [
+                "GET /search/tv",
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits",
+                "GET /tv/{tv_id}/season/{season_number}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 90
+        },
+        {
+            "query": "Where was the director of Mulholland Drive born?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits",
+                "GET /person/{person_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 91
+        },
+        {
+            "query": "Is Mulholland Drive in the Top-10 rated list of the TMDB?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/top_rated"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 92
+        },
+        {
+            "query": "Who directed more movies, Akira Kurosawa or Spielberg?",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 93
+        },
+        {
+            "query": "What TV series has the director of Mulholland Drive directed?",
+            "solution": [
+                "GET /search/movie",
+                "GET /person/{person_id}/tv_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 94
+        },
+        {
+            "query": "Tell me about actor Scarlett Johansson's birthday",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 95
+        },
+        {
+            "query": "How many seasons of Sword Art Online are there?",
+            "solution": [
+                "GET /search/tv",
+                "GET /tv/{tv_id}"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 96
+        },
+        {
+            "query": "Are Yui Aragaki and Gen Hoshino co-starring in We Married as Job?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 97
+        },
+        {
+            "query": "Who is older, by how many years, the director of film Barbie or the lead actor of television DEATH NOTE?",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/tv",
+                "GET /tv/{tv_id}/credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 98
+        },
+        {
+            "query": "Tell me about Katherine LaNasa's latest movie appearance.",
+            "solution": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 99
+        },
+        {
+            "query": "Give me one cover image of the movie Oppenheimer.",
+            "solution": [
+                "GET /search/movie",
+                "GET /movie/{movie_id}/images"
+            ],
+            "noise": [
+                "GET /search/person",
+                "GET /person/{person_id}/movie_credits",
+                "GET /movie/top_rated",
+                "GET /movie/{movie_id}/credits",
+                "GET /search/collection",
+                "GET /collection/{collection_id}/images",
+                "GET /movie/{movie_id}/release_dates"
+            ],
+            "q_id": 100
+        }
+    ],
+    "tool": [
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}/keywords",
+            "para": [],
+            "usage": "",
+            "description": "Get the keywords that have been added to a movie.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/popular",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of the current popular TV shows on TMDb. This list updates daily.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/person/{person_id}",
+            "para": [],
+            "usage": "",
+            "description": "Get the primary person details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).\n\n#### Recent Changes\n\n| **Date** | **Change** |\n| - | - |\n| July 17, 2018 | Added the `known_for_department` field. |\n| April 26, 2018 | Added the [translations](#endpoint:CSaMjCxXAtGpxNGfS) method. |\n| November 9, 2016 | Biographies are now translatable on TMDb. This means you can query person details with a language parameter. |",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}/reviews",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get the user reviews for a movie.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}/release_dates",
+            "para": [],
+            "usage": "",
+            "description": "Get the release date along with the certification for a movie.\n\nRelease dates support different types:\n\n1. Premiere\n2. Theatrical (limited)\n3. Theatrical\n4. Digital\n5. Physical\n6. TV",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits",
+            "para": [],
+            "usage": "",
+            "description": "Get the credits (cast, crew and guest stars) for a TV episode.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}/images",
+            "para": [
+                {
+                    "name": "include_image_language",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "the include image language"
+                }
+            ],
+            "usage": "",
+            "description": "Get the images that belong to a movie.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/search/tv",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                },
+                {
+                    "name": "query",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Pass a text query to search. This value should be URI encoded.",
+                    "required": true
+                },
+                {
+                    "name": "include_adult",
+                    "in": "query",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "description": "Choose whether to inlcude adult (pornography) content in the results."
+                },
+                {
+                    "name": "first_air_date_year",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "the first air date year"
+                }
+            ],
+            "usage": "",
+            "description": "Search for a TV show.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}",
+            "para": [],
+            "usage": "",
+            "description": "Get the TV episode details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).\n\n#### Recent Changes\n\n| **Date** | **Change** |\n| - | - |\n| June 1, 2018 | Added the [translations](#endpoint:5SFwZar3LkP99QMp7) method. |",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/network/{network_id}/images",
+            "para": [],
+            "usage": "",
+            "description": "Get the TV network logos by id.\n\nThere are two image formats that are supported for networks, PNG's and SVG's. You can see which type the original file is by looking at the `file_type` field. We prefer SVG's as they are resolution independent and as such, the width and height are only there to reflect the original asset that was uploaded. An SVG can be scaled properly beyond those dimensions if you call them as a PNG.\n\nFor more information about how SVG's and PNG's can be used, take a read through [this document](#docTextSection:mXP9B2uzoDJFguDZv).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/genre/tv/list",
+            "para": [],
+            "usage": "",
+            "description": "Get the list of official genres for TV shows.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/search/movie",
+            "para": [
+                {
+                    "name": "query",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Pass a text query to search. This value should be URI encoded.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                },
+                {
+                    "name": "include_adult",
+                    "in": "query",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "description": "Choose whether to inlcude adult (pornography) content in the results."
+                },
+                {
+                    "name": "region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify a ISO 3166-1 code to filter release dates. Must be uppercase."
+                },
+                {
+                    "name": "year",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "the specific year"
+                },
+                {
+                    "name": "primary_release_year",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "the primary release year"
+                }
+            ],
+            "usage": "",
+            "description": "Search for movies.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/discover/movie",
+            "para": [
+                {
+                    "name": "region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify a ISO 3166-1 code to filter release dates. Must be uppercase."
+                },
+                {
+                    "name": "sort_by",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "",
+                            "popularity.asc",
+                            "popularity.desc",
+                            "release_date.asc",
+                            "release_date.desc",
+                            "revenue.asc",
+                            "revenue.desc",
+                            "primary_release_date.asc",
+                            "primary_release_date.desc",
+                            "original_title.asc",
+                            "original_title.desc",
+                            "vote_average.asc",
+                            "vote_average.desc",
+                            "vote_count.asc",
+                            "vote_count.desc"
+                        ],
+                        "default": "popularity.desc"
+                    },
+                    "description": "Choose from one of the many available sort options."
+                },
+                {
+                    "name": "certification_country",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Used in conjunction with the certification filter, use this to specify a country with a valid certification."
+                },
+                {
+                    "name": "certification",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter results with a valid certification from the 'certification_country' field."
+                },
+                {
+                    "name": "certification.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include movies that have a certification that is less than or equal to the specified value."
+                },
+                {
+                    "name": "certification.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include movies that have a certification that is greater than or equal to the specified value."
+                },
+                {
+                    "name": "include_adult",
+                    "in": "query",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "description": "A filter and include or exclude adult movies."
+                },
+                {
+                    "name": "include_video",
+                    "in": "query",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "description": "A filter to include or exclude videos."
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify the page of results to query."
+                },
+                {
+                    "name": "primary_release_year",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "A filter to limit the results to a specific primary release year."
+                },
+                {
+                    "name": "primary_release_date.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include movies that have a primary release date that is greater or equal to the specified value."
+                },
+                {
+                    "name": "primary_release_date.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include movies that have a primary release date that is less than or equal to the specified value."
+                },
+                {
+                    "name": "release_date.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include movies that have a release date (looking at all release dates) that is greater or equal to the specified value."
+                },
+                {
+                    "name": "release_date.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include movies that have a release date (looking at all release dates) that is less than or equal to the specified value."
+                },
+                {
+                    "name": "with_release_type",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Specify a comma (AND) or pipe (OR) separated value to filter release types by. These release types map to the same values found on the movie release date method."
+                },
+                {
+                    "name": "year",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "A filter to limit the results to a specific year (looking at all release dates)."
+                },
+                {
+                    "name": "vote_count.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include movies that have a vote count that is greater or equal to the specified value."
+                },
+                {
+                    "name": "vote_count.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include movies that have a vote count that is less than or equal to the specified value."
+                },
+                {
+                    "name": "vote_average.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "number"
+                    },
+                    "description": "Filter and only include movies that have a rating that is greater or equal to the specified value."
+                },
+                {
+                    "name": "vote_average.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "number"
+                    },
+                    "description": "Filter and only include movies that have a rating that is less than or equal to the specified value."
+                },
+                {
+                    "name": "with_cast",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma separated list of person ID's. Only include movies that have one of the ID's added as an actor."
+                },
+                {
+                    "name": "with_crew",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma separated list of person ID's. Only include movies that have one of the ID's added as a crew member."
+                },
+                {
+                    "name": "with_people",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma separated list of person ID's. Only include movies that have one of the ID's added as a either a actor or a crew member."
+                },
+                {
+                    "name": "with_companies",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma separated list of production company ID's. Only include movies that have one of the ID's added as a production company."
+                },
+                {
+                    "name": "with_genres",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Comma separated value of genre ids that you want to include in the results."
+                },
+                {
+                    "name": "without_genres",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Comma separated value of genre ids that you want to exclude from the results."
+                },
+                {
+                    "name": "with_keywords",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma separated list of keyword ID's. Only includes movies that have one of the ID's added as a keyword."
+                },
+                {
+                    "name": "without_keywords",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Exclude items with certain keywords. You can comma and pipe seperate these values to create an 'AND' or 'OR' logic."
+                },
+                {
+                    "name": "with_runtime.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include movies that have a runtime that is greater or equal to a value."
+                },
+                {
+                    "name": "with_runtime.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include movies that have a runtime that is less than or equal to a value."
+                },
+                {
+                    "name": "with_original_language",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify an ISO 639-1 string to filter results by their original language value."
+                },
+                {
+                    "name": "with_watch_providers",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma or pipe separated list of watch provider ID's. Combine this filter with `watch_region` in order to filter your results by a specific watch provider in a specific region."
+                },
+                {
+                    "name": "watch_region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "An ISO 3166-1 code. Combine this filter with `with_watch_providers` in order to filter your results by a specific watch provider in a specific region."
+                },
+                {
+                    "name": "with_watch_monetization_types",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "flatrate",
+                            "free",
+                            "ads",
+                            "rent",
+                            "buy"
+                        ]
+                    },
+                    "description": "In combination with `watch_region`, you can filter by monetization type."
+                },
+                {
+                    "name": "without_companies",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter the results to exclude the specific production companies you specify here. `AND` / `OR` filters are supported."
+                }
+            ],
+            "usage": "",
+            "description": "Discover movies by different types of data like average rating, number of votes, genres and certifications. You can get a valid list of certifications from the [certifications list](#endpoint:faFKjuKG2HnwexAWM) method.\n\nDiscover also supports a nice list of sort options. See below for all of the available options.\n\nPlease note, when using `certification` \\ `certification.lte` you must also specify `certification_country`. These two parameters work together in order to filter the results. You can only filter results with the countries we have added to our [certifications list](#endpoint:faFKjuKG2HnwexAWM).\n\nIf you specify the `region` parameter, the regional release date will be used instead of the primary release date. The date returned will be the first date based on your query (ie. if a `with_release_type` is specified). It's important to note the order of the release types that are used. Specifying \"2|3\" would return the limited theatrical release date as opposed to \"3|2\" which would return the theatrical date.\n\nAlso note that a number of filters support being comma (`,`) or pipe (`|`) separated. Comma's are treated like an `AND` and query while pipe's are an `OR`. \n\nSome examples of what can be done with discover can be found [here](https://www.themoviedb.org/documentation/api/discover).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/upcoming",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                },
+                {
+                    "name": "region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify a ISO 3166-1 code to filter release dates. Must be uppercase."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of upcoming movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.\n\nYou can optionally specify a `region` prameter which will narrow the search to only look for theatrical release dates within the specified country.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/credit/{credit_id}",
+            "para": [],
+            "usage": "",
+            "description": "Get a movie or TV credit details by id.\n\n#### Recent Changes\n\n| **Date** | **Change** |\n| - | - |\n| July 13, 2018 | Movie credits are now supported. |",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/person/{person_id}/tv_credits",
+            "para": [],
+            "usage": "",
+            "description": "Get the TV show credits for a person.\n\nYou can query for some extra details about the credit with the [credit method](#endpoint:xPWdEBLkvCNZSicLN).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/latest",
+            "para": [],
+            "usage": "",
+            "description": "Get the most newly created TV show. This is a live response and will continuously change.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/company/{company_id}",
+            "para": [],
+            "usage": "",
+            "description": "Get a companies details by id.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/images",
+            "para": [],
+            "usage": "",
+            "description": "Get the images that belong to a TV show.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits",
+            "para": [],
+            "usage": "",
+            "description": "Get the credits for TV season.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/now_playing",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                },
+                {
+                    "name": "region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify a ISO 3166-1 code to filter release dates. Must be uppercase."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.\n\nYou can optionally specify a `region` prameter which will narrow the search to only look for theatrical release dates within the specified country.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/review/{review_id}",
+            "para": [],
+            "usage": "",
+            "description": "get the review of based on the input review id",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/on_the_air",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of shows that are currently on the air.\n\nThis query looks for any TV show that has an episode with an air date in the next 7 days.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}",
+            "para": [
+                {
+                    "name": "append_to_response",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Append requests within the same namespace to the response."
+                }
+            ],
+            "usage": "",
+            "description": "Get the primary information about a movie.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/images",
+            "para": [],
+            "usage": "",
+            "description": "Get the images that belong to a TV season.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/company/{company_id}/images",
+            "para": [],
+            "usage": "",
+            "description": "Get a companies logos by id.\n\nThere are two image formats that are supported for companies, PNG's and SVG's. You can see which type the original file is by looking at the `file_type` field. We prefer SVG's as they are resolution independent and as such, the width and height are only there to reflect the original asset that was uploaded. An SVG can be scaled properly beyond those dimensions if you call them as a PNG.\n\nFor more information about how SVG's and PNG's can be used, take a read through [this document](#docTextSection:mXP9B2uzoDJFguDZv).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/reviews",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get the reviews for a TV show.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/similar",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of similar TV shows. These items are assembled by looking at keywords and genres.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/network/{network_id}",
+            "para": [],
+            "usage": "",
+            "description": "Get the details of a network.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/recommendations",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get the list of TV show recommendations for this item.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images",
+            "para": [],
+            "usage": "",
+            "description": "Get the images that belong to a TV episode.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/popular",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                },
+                {
+                    "name": "region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify a ISO 3166-1 code to filter release dates. Must be uppercase."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of the current popular movies on TMDb. This list updates daily.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/airing_today",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of TV shows that are airing today. This query is purely day based as we do not currently support airing times.\n\nYou can specify a [timezone](endpoint:KQ4CDdEoWKJYLkrhS) to offset the day calculation. Without a specified timezone, this query defaults to EST (Eastern Time UTC-05:00).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/keywords",
+            "para": [],
+            "usage": "",
+            "description": "Get the keywords that have been added to a TV show.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/search/person",
+            "para": [
+                {
+                    "name": "query",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Pass a text query to search. This value should be URI encoded.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                },
+                {
+                    "name": "include_adult",
+                    "in": "query",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "description": "Choose whether to inlcude adult (pornography) content in the results."
+                },
+                {
+                    "name": "region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify a ISO 3166-1 code to filter release dates. Must be uppercase."
+                }
+            ],
+            "usage": "",
+            "description": "Search for people.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/search/company",
+            "para": [
+                {
+                    "name": "query",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Pass a text query to search. This value should be URI encoded.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Search for companies.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/discover/tv",
+            "para": [
+                {
+                    "name": "sort_by",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "",
+                            "vote_average.desc",
+                            "vote_average.asc",
+                            "first_air_date.desc",
+                            "first_air_date.asc",
+                            "popularity.desc",
+                            "popularity.asc"
+                        ],
+                        "default": "popularity.desc"
+                    },
+                    "description": "Choose from one of the many available sort options."
+                },
+                {
+                    "name": "air_date.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include TV shows that have a air date (by looking at all episodes) that is greater or equal to the specified value."
+                },
+                {
+                    "name": "air_date.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include TV shows that have a air date (by looking at all episodes) that is less than or equal to the specified value."
+                },
+                {
+                    "name": "first_air_date.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include TV shows that have a original air date that is greater or equal to the specified value. Can be used in conjunction with the \"include_null_first_air_dates\" filter if you want to include items with no air date."
+                },
+                {
+                    "name": "first_air_date.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter and only include TV shows that have a original air date that is less than or equal to the specified value. Can be used in conjunction with the \"include_null_first_air_dates\" filter if you want to include items with no air date."
+                },
+                {
+                    "name": "first_air_date_year",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include TV shows that have a original air date year that equal to the specified value. Can be used in conjunction with the \"include_null_first_air_dates\" filter if you want to include items with no air date."
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify the page of results to query."
+                },
+                {
+                    "name": "timezone",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "default": "America/New_York"
+                    },
+                    "description": "Used in conjunction with the air_date.gte/lte filter to calculate the proper UTC offset."
+                },
+                {
+                    "name": "vote_average.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "number"
+                    },
+                    "description": "Filter and only include movies that have a rating that is greater or equal to the specified value."
+                },
+                {
+                    "name": "vote_count.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include movies that have a rating that is less than or equal to the specified value."
+                },
+                {
+                    "name": "with_genres",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Comma separated value of genre ids that you want to include in the results."
+                },
+                {
+                    "name": "with_networks",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Comma separated value of network ids that you want to include in the results."
+                },
+                {
+                    "name": "without_genres",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Comma separated value of genre ids that you want to exclude from the results."
+                },
+                {
+                    "name": "with_runtime.gte",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include TV shows with an episode runtime that is greater than or equal to a value."
+                },
+                {
+                    "name": "with_runtime.lte",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "description": "Filter and only include TV shows with an episode runtime that is less than or equal to a value."
+                },
+                {
+                    "name": "include_null_first_air_dates",
+                    "in": "query",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "description": "Use this filter to include TV shows that don't have an air date while using any of the \"first_air_date\" filters."
+                },
+                {
+                    "name": "with_original_language",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify an ISO 639-1 string to filter results by their original language value."
+                },
+                {
+                    "name": "without_keywords",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Exclude items with certain keywords. You can comma and pipe seperate these values to create an 'AND' or 'OR' logic."
+                },
+                {
+                    "name": "screened_theatrically",
+                    "in": "query",
+                    "schema": {
+                        "type": "boolean"
+                    },
+                    "description": "Filter results to include items that have been screened theatrically."
+                },
+                {
+                    "name": "with_companies",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma separated list of production company ID's. Only include movies that have one of the ID's added as a production company."
+                },
+                {
+                    "name": "with_keywords",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma separated list of keyword ID's. Only includes TV shows that have one of the ID's added as a keyword."
+                },
+                {
+                    "name": "with_watch_providers",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "A comma or pipe separated list of watch provider ID's. Combine this filter with `watch_region` in order to filter your results by a specific watch provider in a specific region."
+                },
+                {
+                    "name": "watch_region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "An ISO 3166-1 code. Combine this filter with `with_watch_providers` in order to filter your results by a specific watch provider in a specific region."
+                },
+                {
+                    "name": "with_watch_monetization_types",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "flatrate",
+                            "free",
+                            "ads",
+                            "rent",
+                            "buy"
+                        ]
+                    },
+                    "description": "In combination with `watch_region`, you can filter by monetization type."
+                },
+                {
+                    "name": "with_status",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ]
+                    },
+                    "description": "Filter TV shows by their status.\n\nReturning Series: 0\nPlanned: 1\nIn Production: 2\nEnded: 3\nCancelled: 4\nPilot: 5"
+                },
+                {
+                    "name": "with_type",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6
+                        ]
+                    },
+                    "description": "Filter TV shows by their type.\n\nDocumentary: 0\nNews: 1\nMiniseries: 2\nReality: 3\nScripted: 4\nTalk Show: 5\nVideo: 6"
+                },
+                {
+                    "name": "without_companies",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Filter the results to exclude the specific production companies you specify here. `AND` / `OR` filters are supported."
+                }
+            ],
+            "usage": "",
+            "description": "Discover TV shows by different types of data like average rating, number of votes, genres, the network they aired on and air dates.\n\nDiscover also supports a nice list of sort options. See below for all of the available options.\n\nAlso note that a number of filters support being comma (`,`) or pipe (`|`) separated. Comma's are treated like an `AND` and query while pipe's are an `OR`. \n\nSome examples of what can be done with discover can be found [here](https://www.themoviedb.org/documentation/api/discover).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/top_rated",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                },
+                {
+                    "name": "region",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Specify a ISO 3166-1 code to filter release dates. Must be uppercase."
+                }
+            ],
+            "usage": "",
+            "description": "Get the top rated movies on TMDb.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/latest",
+            "para": [],
+            "usage": "",
+            "description": "Get the most newly created movie. This is a live response and will continuously change.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/top_rated",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of the top rated TV shows on TMDb.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/trending/{media_type}/{time_window}",
+            "para": [],
+            "usage": "",
+            "description": "Get the daily or weekly trending items. The daily trending list tracks items over the period of a day while items have a 24 hour half life. The weekly list tracks items over a 7 day period, with a 7 day half life.\n\n#### Valid Media Types\n\n| **Media Type** | **Description** |\n| - | - |\n| all | Include all movies, TV shows and people in the results as a global trending list. |\n| movie | Show the trending movies in the results. |\n| tv | Show the trending TV shows in the results. |\n| person | Show the trending people in the results. |\n\n#### Valid Time Windows\n\n| **Time Window** | **Description** |\n| - | - |\n| day | View the trending list for the day. |\n| week | View the trending list for the week. |",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/genre/movie/list",
+            "para": [],
+            "usage": "",
+            "description": "Get the list of official genres for movies.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}",
+            "para": [],
+            "usage": "",
+            "description": "Get the TV season details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/collection/{collection_id}",
+            "para": [],
+            "usage": "",
+            "description": "Get collection details by id.\n\n#### Recent Changes\n\n| **Date** | **Change** |\n| - | - |\n| March 16, 2018 | Added the [translations](#endpoint:bhcsxEgRvyk3N7FnD) method. |",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/person/{person_id}/images",
+            "para": [],
+            "usage": "",
+            "description": "Get the images for a person.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}",
+            "para": [],
+            "usage": "",
+            "description": "Get the primary TV show details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).\n\n#### Recent Changes\n\n| **Date** | **Change** |\n| - | - |\n| July 17, 2018 | We now return `last_episode_to_air` and `next_episode_to_air` fields. |\n| March 12, 2018 | Networks return proper logos and we introduced SVG support. |\n| March 8, 2018 | The `seasons` field now returns the translated names and overviews. |",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/person/popular",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get the list of popular people on TMDb. This list updates daily.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/collection/{collection_id}/images",
+            "para": [],
+            "usage": "",
+            "description": "Get the images for a collection by id.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/tv/{tv_id}/credits",
+            "para": [],
+            "usage": "",
+            "description": "Get the credits (cast and crew) that have been added to a TV show.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits",
+            "para": [],
+            "usage": "",
+            "description": "Get the movie credits for a person, the results contains various information such as popularity and release date.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}/recommendations",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of recommended movies for a movie.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/search/collection",
+            "para": [
+                {
+                    "name": "query",
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Pass a text query to search. This value should be URI encoded.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Search for collections.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+            "para": [],
+            "usage": "",
+            "description": "Get the cast and crew for a movie.",
+            "method": "GET",
+            "result": ""
+        },
+        {
+            "base_url": "https://api.themoviedb.org/3",
+            "url": "GET https://api.themoviedb.org/3/movie/{movie_id}/similar",
+            "para": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "default": 1
+                    },
+                    "description": "Specify which page to query."
+                }
+            ],
+            "usage": "",
+            "description": "Get a list of similar movies. This is **not** the same as the \"Recommendation\" system you see on the website.\n\nThese items are assembled by looking at keywords and genres.",
+            "method": "GET",
+            "result": ""
+        }
+    ]
+}
