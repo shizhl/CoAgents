@@ -49,7 +49,7 @@ API Selection: {api}
 HTTP request: """
 
 
-class ActGPT(Base):
+class ExecAgent(Base):
 
     def __init__(self, model='gpt-3.5-turbo', endpoints=None, requests_wrapper=None, role='ActGPT', url=None):
         super().__init__(model=model, endpoints=endpoints, role=role, url=url)
@@ -108,7 +108,7 @@ class ActGPT(Base):
         for i in range(0, 3):
             input_request = get_from_openai(model_name=self.model, temp=0, messages=messages, json_mode=True, stop=['FINISH:'])['content']
             messages.append({'role': 'assistant', 'content': input_request})
-            logger.info(f'Actor: {input_request}')
+            logger.info(f'ExecAgent: {input_request}')
             data = json.loads(input_request)
 
             empty_value = self.extract(data['url'])
@@ -131,8 +131,6 @@ class ActGPT(Base):
             return ['The execution result is empty'] * 3
         if input_request == None:
             return ['Please try again'] * 3
-        self.add_traj(input_request)
-        self.add_traj(response)
         input_request = json.loads(input_request) if type(input_request) == str else input_request
         response = json.loads(response) if type(response) == str else response
         # # parse

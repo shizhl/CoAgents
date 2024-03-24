@@ -1,103 +1,98 @@
 from langchain.requests import Requests
-from models.actor import ActGPT
 import logging
 from utilize.utilze import ColorPrint, load_data, write_file, mean
-from models.parse import ParseGPT
+from models.execution import ExecAgent
+from models.observation import ObseAgent
+from models.grounding import GroAgent
 from tqdm import tqdm
-from models.plan import *
-
+import argparse
 
 logger = logging.getLogger()
 
-class Interact:
 
-    @staticmethod
-    def run(data, model_name='gpt-3.5-turbo', endpoints=None,url=None):
-        logging.basicConfig(
-            format="%(message)s",
-            handlers=[logging.StreamHandler(ColorPrint())],
-        )
-        logger.setLevel(logging.INFO)
-        access_token='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZGJhYjU5MGM3ZWFjYTA3ZWJlNjI1OTc0YTM3YWQ5MiIsInN1YiI6IjY1MmNmODM3NjYxMWI0MDBmZmM3MDM5OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.McsK4Wm5XnRSDLn62Jhy787YUAwZcQz0X5qzkGuLe_s'
-        headers = {'Authorization': f'Bearer {access_token}' }
-        requests_wrapper = Requests(headers=headers)
+def run(data, model_name, headers, endpoints, url):
+    # initialize the environment
+    logging.basicConfig(
+        format="%(message)s",
+        handlers=[logging.StreamHandler(ColorPrint())],
+    )
+    logger.setLevel(logging.INFO)
 
-        name2doc = {line['url']: line for line in endpoints}
-        results=[]
-        for line in tqdm(data):
-            logger.info(f'Query: {line["query"]}')
-            logger.info(f'Query: {line["solution"]}')
-            tools = [tool for tool in line['solution']]
-            tools = [e.replace(' ',' https://api.themoviedb.org/3') for e in tools if e not in line['noise']]
-            tools = [name2doc[tool] for tool in tools]
-            p_model = PlanGPT(model_name, tools,url=url)
-            a_model = ActGPT(model_name, tools, requests_wrapper=requests_wrapper,url=url)
-            o_model = ParseGPT(model_name,tools,url=url)
-            for i in range(0,3):
-                try:
-                    line['result']=Interact._run(line, p_model, a_model,o_model)
-                    line['traj']= {"plan":p_model.traj,'act':a_model.traj,'parse':o_model.traj}
-                    line['token']= {"plan":sum(p_model.token),'act':sum(a_model.token),'parse':sum(o_model.token)}
-                    print('the token is '+str(line['token']))
-                    break
-                except:
-                    print(f'try {i}...')
-                    line['token']= None
-                    line['result'] = None
-            results.append(line)
-        return results
+    # the headers used to request the API servers
+    requests_wrapper = Requests(headers=headers)
 
-    @staticmethod
-    def _run(line,p_model:PlanGPT,a_model:ActGPT,o_model:ParseGPT):
-        result = []
-        background = line['query']
-        hidden = 'Thought: '
-        for i in range(5):
-            thought, action, obs = p_model.generate(query=line['query'], hidden=hidden, api_type='tmdb')
-            if obs=='FINISH':
-                print(thought)
-                print(action)
-                result.append({"thought": thought, 'action': action, 'observation':obs})
+    name2doc = {line['url']: line for line in endpoints}
+
+    results = [] # save the results
+
+    for line in tqdm(data):
+        logger.info(f'Query: {line["query"]}')
+        logger.info(f'Query: {line["solution"]}')
+        tools = [name2doc[tool] for tool in line['solution']]
+
+        # initialize the three agents
+        p_model = GroAgent(model_name, tools, url=url)
+        a_model = ExecAgent(model_name, tools, requests_wrapper=requests_wrapper, url=url)
+        o_model = ObseAgent(model_name, tools, url=url)
+
+        # solve the tasks via the cooperation and interaction of the three agents
+        for i in range(0, 3):
+            try:
+                line['result'] = _run(line, p_model, a_model, o_model)
+                line['traj'] = {"plan": p_model.traj, 'act': a_model.traj, 'parse': o_model.traj}
+                line['token'] = {"plan": sum(p_model.token), 'act': sum(a_model.token), 'parse': sum(o_model.token)}
+                print('the token is ' + str(line['token']))
                 break
-            logger.info('Planner: ' + thought)
+            except:
+                print(f'try {i}...')
+                line['token'] = None
+                line['result'] = None
 
-            input_request,instruction,response = a_model.generate(thought=thought, action=action, background=background)
-            observation= o_model.generate(instruction=instruction,json_request=input_request, response=response)
-            observation = observation.strip().replace('\n', ' ')
-
-            background += ' -> ' + observation
-            result.append({"thought": thought, "action": action, "observation": observation})
-            hidden += f'{thought}\nAPI Selection: {action}\nExecuted Result: {observation}\nThought: '
-        return result
+        results.append(line)
+    return results
 
 
-def evaluate(log_file):
-    data=load_data(log_file)
-    recall=[]
-    precise=[]
-    success_rate=[]
-    base_url='https://api.themoviedb.org/3'
-    for line in data:
-        if line['result']==None:
-            recall.append(0)
-            precise.append(0)
+def _run(example, p_model: GroAgent, a_model: ExecAgent, o_model: ObseAgent):
+    result = [] # save the trajectory
+    background = example['query']
+    hidden = 'Thought: '
+    for i in range(5):
+        # ground the user's instruction into a tool-use instruction
+        thought, action, obs = p_model.generate(query=example['query'], hidden=hidden, api_type='tmdb')
+        if obs == 'FINISH':
+            print(thought,'\n', action)
+            result.append({"thought": thought, 'action': action, 'observation': obs})
             break
-        pred=[e['action'].replace(base_url,'') for e in line['result'] if e['observation']!='FINISH']
-        overlap=len([e for e in line['solution'] if e[4:] in pred])
-        success_rate.append(overlap==len(line['solution']))
-        precise.append(overlap/len(pred))
-        recall.append(overlap/len(line['solution']))
+        logger.info('GroAgent: ' + thought)
 
-    return mean(success_rate),mean(precise),mean(recall)
+        # execution the tool-use instruction and get the execution results
+        input_request, instruction, response = a_model.generate(thought=thought, action=action, background=background)
+
+        # observe the useful information from the length execution results
+        observation = o_model.generate(instruction=instruction, json_request=input_request, response=response)
+        observation = observation.strip().replace('\n', ' ')
+
+        # update the context and incorporate the extracted information into the next action prediction
+        background += ' -> ' + observation
+        result.append({"thought": thought, "action": action, "observation": observation})
+        hidden += f'{thought}\nAPI Selection: {action}\nExecuted Result: {observation}\nThought: '
+    return result
+
 
 if __name__ == '__main__':
-    log_file='./logs/tmdb.token.json'
-    data=load_data('./dataset/tmdb.data.tool.json')['data']
-    tools=load_data('./dataset/tmdb.data.tool.json')['tool']
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--model_name', type=str, default='gpt-3.5-turbo', required=False)
+    parser.add_argument('--log_file', type=str, help='your log file to save the output trajectory', required=True)
+    parser.add_argument('--data_file', type=str, help='your data file containing the test examples and tools', required=True)
+    parser.add_argument('--access_token_file', type=str, help='the file containing the access token required by TMDB', required=True)
 
-    Interact.run(model_name='gpt-3.5-turbo', # gpt-3.5-turbo
-                 endpoints=tools, data=data,)
-    result=evaluate(log_file)
-    print(result)
+    args = parser.parse_args()
 
+    with open(args.access_token_file) as f:
+        access_token = f.read().strip()
+    headers = {'Authorization': f'Bearer {access_token}'}
 
+    data = load_data(args.data_file)['data']
+    tools = load_data(args.data_file)['tool']
+
+    run(model_name=args.model_name, headers=headers, endpoints=tools, data=data, url=None)

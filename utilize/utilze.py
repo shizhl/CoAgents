@@ -16,9 +16,9 @@ class ColorPrint:
         self.color_mapping = {
             'Query':Fore.WHITE,
             'Ground truth':Fore.WHITE,
-            "Planner": Fore.GREEN,
-            "Actor": Fore.YELLOW,
-            "Parser": Fore.BLUE,
+            "GroAgent": Fore.GREEN,
+            "ExecAgent": Fore.YELLOW,
+            "ObseAgent": Fore.BLUE,
             "Error": Fore.RED,
         }
 

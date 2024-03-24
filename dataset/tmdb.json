@@ -3,1726 +3,826 @@
         {
             "query": "give me the number of movies directed by Sofia Coppola",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits"
             ],
             "q_id": 1
         },
         {
             "query": "Who was the lead actor in the movie The Dark Knight?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 2
         },
         {
             "query": "Who directed the top-1 rated movie?",
             "solution": [
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/movie/top_rated",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 3
         },
         {
             "query": "give me a image for the collection Star Wars",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}/images"
             ],
             "q_id": 4
         },
         {
             "query": "What is the logo of the Walt Disney?",
             "solution": [
-                "GET /search/company",
-                "GET /company/{company_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/company",
+                "GET https://api.themoviedb.org/3/company/{company_id}/images"
             ],
             "q_id": 5
         },
         {
             "query": "What dose the lead actor of Titanic look like?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits",
-                "GET /person/{person_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}/images"
             ],
             "q_id": 6
         },
         {
             "query": "give me some reviews of the first movie that is similar to Titanic",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/similar",
-                "GET /movie/{movie_id}/reviews"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/similar",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/reviews"
             ],
             "q_id": 7
         },
         {
             "query": "I just finished watching Titanic and I want some other movie recommendations",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/recommendations"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/recommendations"
             ],
             "q_id": 8
         },
         {
             "query": "What is the latest movie directed by Christopher Nolan?",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits"
             ],
             "q_id": 9
         },
         {
             "query": "tell me the highest rated movie directed by Martin Scorsese",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits"
             ],
             "q_id": 10
         },
         {
             "query": "Who is the director of Leonardo DiCaprio's latest movie?",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 11
         },
         {
             "query": "tell me a TV show recently directed by Catherine Hardwicke",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/tv_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/tv_credits"
             ],
             "q_id": 12
         },
         {
             "query": "Please recommend me some TV shows similar to Breaking Bad",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/recommendations"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/recommendations"
             ],
             "q_id": 13
         },
         {
             "query": "Who is the director of today's most trending movie?",
             "solution": [
-                "GET /trending/{media_type}/{time_window}",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/trending/{media_type}/{time_window}",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 14
         },
         {
             "query": "Who is the director of the movie \"Twilight\"?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 15
         },
         {
             "query": "give me a photo belong to the second episode of the first season of the Witcher",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images"
             ],
             "q_id": 16
         },
         {
             "query": "What is top-1 rated movie?",
             "solution": [
-                "GET /movie/top_rated"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/movie/top_rated"
             ],
             "q_id": 17
         },
         {
             "query": "What is the release date of the movie \"The Matrix\"?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/release_dates"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/release_dates"
             ],
             "q_id": 18
         },
         {
             "query": "Who is the most popular person?",
             "solution": [
-                "GET /person/popular"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/person/popular"
             ],
             "q_id": 19
         },
         {
             "query": "Give me some cover images of movies directed by Christopher Nolan.",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/{movie_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/images"
             ],
             "q_id": 20
         },
         {
             "query": "What are some common keywords associated with movie \"Titanic\"?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/keywords"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/keywords"
             ],
             "q_id": 21
         },
         {
             "query": "Give me a show that is currently on the air",
             "solution": [
-                "GET /tv/on_the_air"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/on_the_air"
             ],
             "q_id": 22
         },
         {
             "query": "When is Clint Eastwood's latest movie scheduled to be released?",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/{movie_id}/release_dates"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/release_dates"
             ],
             "q_id": 23
         },
         {
             "query": "Give me some movie reviews about The Dark Knight",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/reviews"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/reviews"
             ],
             "q_id": 24
         },
         {
             "query": "What are some movies that are similar to one of the movies directed by Francis Ford Coppola?",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/{movie_id}/similar"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/similar"
             ],
             "q_id": 25
         },
         {
             "query": "Who is the lead actor in the latest released movie?",
             "solution": [
-                "GET /movie/latest",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/movie/latest",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 26
         },
         {
             "query": "give me one image of the movie that is currently showing in theaters",
             "solution": [
-                "GET /movie/now_playing",
-                "GET /movie/{movie_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/movie/now_playing",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/images"
             ],
             "q_id": 27
         },
         {
             "query": "What is the most popular movie right now and what is its keywords?",
             "solution": [
-                "GET /movie/popular",
-                "GET /movie/{movie_id}/keywords"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/movie/popular",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/keywords"
             ],
             "q_id": 28
         },
         {
             "query": "What are the keywords of the most popular movie right now",
             "solution": [
-                "GET /movie/popular",
-                "GET /movie/{movie_id}/keywords"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/movie/popular",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/keywords"
             ],
             "q_id": 29
         },
         {
             "query": "Who has starred in a movie \"Titanic\"",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 30
         },
         {
             "query": "What do the logo looks like for Paramount Pictures?",
             "solution": [
-                "GET /company/{company_id}",
-                "GET /company/{company_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/company/{company_id}",
+                "GET https://api.themoviedb.org/3/company/{company_id}/images"
             ],
             "q_id": 31
         },
         {
             "query": "tell me where the company \"universal pictures\" was founded?",
             "solution": [
-                "GET /search/company",
-                "GET /company/{company_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/company",
+                "GET https://api.themoviedb.org/3/company/{company_id}"
             ],
             "q_id": 32
         },
         {
             "query": "When is the movie \"Titanic\" released?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/release_dates"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/release_dates"
             ],
             "q_id": 33
         },
         {
             "query": "Who has starred in the first movie of Star Wars collection?",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 34
         },
         {
             "query": "give me a movie cover of a movie from the collection Harry Potter",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}",
-                "GET /movie/{movie_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/images"
             ],
             "q_id": 35
         },
         {
             "query": "What are some keywords for a movie of the collection The Hunger Games?",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}",
-                "GET /movie/{movie_id}/keywords"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/keywords"
             ],
             "q_id": 36
         },
         {
             "query": "When are the release dates for the movies of the collection The Hobbit?",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}"
             ],
             "q_id": 37
         },
         {
             "query": "List movies from The Fast and the Furious collection",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}"
             ],
             "q_id": 38
         },
         {
             "query": "Give me a review of a movie from the collection The Fast and the Furious.",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}",
-                "GET /movie/{movie_id}/reviews"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/reviews"
             ],
             "q_id": 39
         },
         {
             "query": "When was the first movie of the collection Lord of the Rings released?",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}"
             ],
             "q_id": 40
         },
         {
             "query": "tell me the directors of the first season of House of Cards",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits"
             ],
             "q_id": 41
         },
         {
             "query": "I want some tv shows that similar to House of Cards",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/similar"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/similar"
             ],
             "q_id": 42
         },
         {
             "query": "When did the most popular TV show currently on the air start?",
             "solution": [
-                "GET /tv/on_the_air",
-                "GET /tv/{tv_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/on_the_air",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}"
             ],
             "q_id": 43
         },
         {
             "query": "tell me a few more works directed by the director of Django Unchained",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits",
-                "GET /person/{person_id}/movie_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits"
             ],
             "q_id": 44
         },
         {
             "query": "tell me the cast of a TV show on the air",
             "solution": [
-                "GET /tv/on_the_air",
-                "GET /tv/{tv_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/on_the_air",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits"
             ],
             "q_id": 45
         },
         {
             "query": "I need a review for Breaking Bad",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/reviews"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/reviews"
             ],
             "q_id": 46
         },
         {
             "query": "I'm watching the tv series The Last Of Us and I need some more recommendations",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/recommendations"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/recommendations"
             ],
             "q_id": 47
         },
         {
             "query": "I'm watching a TV show called The Last Of Us and I need some more recommendations",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/recommendations"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/recommendations"
             ],
             "q_id": 48
         },
         {
             "query": "tell me the guest star from season 3, episode 24 of Friends",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits"
             ],
             "q_id": 49
         },
         {
             "query": "Who is the lead actor in the most popular TV show?",
             "solution": [
-                "GET /tv/popular",
-                "GET /tv/{tv_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/popular",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits"
             ],
             "q_id": 50
         },
         {
             "query": "give me a keyword of the top-1 rated TV show",
             "solution": [
-                "GET /tv/top_rated",
-                "GET /tv/{tv_id}/keywords"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/top_rated",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/keywords"
             ],
             "q_id": 51
         },
         {
             "query": "give me a poster of 2 Broke Girls",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/images"
             ],
             "q_id": 52
         },
         {
             "query": "How many episodes does 2 Broke Girls have in total?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}"
             ],
             "q_id": 53
         },
         {
             "query": "When was the company that produced The Big Bang Theory founded?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}",
-                "GET /company/{company_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}",
+                "GET https://api.themoviedb.org/3/company/{company_id}"
             ],
             "q_id": 54
         },
         {
             "query": "When was the TV show The Big Bang Theory created?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}"
             ],
             "q_id": 55
         },
         {
             "query": "give me a keyword of the most popular TV show",
             "solution": [
-                "GET /tv/popular",
-                "GET /tv/{tv_id}/keywords"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/popular",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/keywords"
             ],
             "q_id": 56
         },
         {
             "query": "What did the third episode of the second season of Westworld talk about?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}"
             ],
             "q_id": 57
         },
         {
             "query": "Tell me the air date of the second season of Game of Thrones",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}"
             ],
             "q_id": 58
         },
         {
             "query": " give me a poster of the third episode of Band of Brothers",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images"
             ],
             "q_id": 59
         },
         {
             "query": "What is the logo of the network that produced Game of Thrones?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}",
-                "GET /network/{network_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}",
+                "GET https://api.themoviedb.org/3/network/{network_id}/images"
             ],
             "q_id": 60
         },
         {
             "query": "give me the homepage of the network that produced Game of Thrones",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}",
-                "GET /network/{network_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}",
+                "GET https://api.themoviedb.org/3/network/{network_id}"
             ],
             "q_id": 61
         },
         {
             "query": "give me a keyword of the most popular TV show currently",
             "solution": [
-                "GET /tv/popular",
-                "GET /tv/{tv_id}/keywords"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/popular",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/keywords"
             ],
             "q_id": 62
         },
         {
             "query": "Where is the headquarter of the company that produced currently the most popular TV show?",
             "solution": [
-                "GET /tv/popular",
-                "GET /tv/{tv_id}",
-                "GET /company/{company_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/popular",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}",
+                "GET https://api.themoviedb.org/3/company/{company_id}"
             ],
             "q_id": 63
         },
         {
             "query": "What is the genre of The Mandalorian?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}"
             ],
             "q_id": 64
         },
         {
             "query": "When is the birthday of the lead actor of today's most trending TV show?",
             "solution": [
-                "GET /trending/{media_type}/{time_window}",
-                "GET /tv/{tv_id}/credits",
-                "GET /person/{person_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/trending/{media_type}/{time_window}",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}"
             ],
             "q_id": 65
         },
         {
             "query": "What is the homepage of the network that produced today's most trending TV show?",
             "solution": [
-                "GET /trending/{media_type}/{time_window}",
-                "GET /tv/{tv_id}",
-                "GET /network/{network_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/trending/{media_type}/{time_window}",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}",
+                "GET https://api.themoviedb.org/3/network/{network_id}"
             ],
             "q_id": 66
         },
         {
             "query": "give me a review of today's most trending TV show",
             "solution": [
-                "GET /trending/{media_type}/{time_window}",
-                "GET /tv/{tv_id}/reviews"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/trending/{media_type}/{time_window}",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/reviews"
             ],
             "q_id": 67
         },
         {
             "query": "I prefer a TV show that similar to today's most trending TV show",
             "solution": [
-                "GET /trending/{media_type}/{time_window}",
-                "GET /tv/{tv_id}/similar"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/trending/{media_type}/{time_window}",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/similar"
             ],
             "q_id": 68
         },
         {
             "query": "I need a poster of today's most trending TV show",
             "solution": [
-                "GET /trending/{media_type}/{time_window}",
-                "GET /tv/{tv_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/trending/{media_type}/{time_window}",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/images"
             ],
             "q_id": 69
         },
         {
             "query": "Who has worked with Jeremy Clarkson in his most popular TV show?",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/tv_credits",
-                "GET /tv/{tv_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/tv_credits",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits"
             ],
             "q_id": 70
         },
         {
             "query": "What does the lead actor of the first episode of second season of Black Mirror look like?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/credits",
-                "GET /person/{person_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}/images"
             ],
             "q_id": 71
         },
         {
             "query": "When is the lead actor of The Mandalorian born?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/credits",
-                "GET /person/{person_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}"
             ],
             "q_id": 72
         },
         {
             "query": "Who is the lead actor of today's most popular TV show?",
             "solution": [
-                "GET /tv/popular",
-                "GET /tv/{tv_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/popular",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits"
             ],
             "q_id": 73
         },
         {
             "query": "give me a photo of the lead actor of the most popular TV show of this week",
             "solution": [
-                "GET /tv/popular",
-                "GET /tv/{tv_id}/credits",
-                "GET /person/{person_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/tv/popular",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}/images"
             ],
             "q_id": 74
         },
         {
             "query": "give me some reviews of Cate Blanchett's latest TV show",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/tv_credits",
-                "GET /tv/{tv_id}/reviews"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/tv_credits",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/reviews"
             ],
             "q_id": 75
         },
         {
             "query": "What is David Schwimmer's most popular TV show?",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/tv_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/tv_credits"
             ],
             "q_id": 76
         },
         {
             "query": "Who directed the third episode of the second season of Black Mirror?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits"
             ],
             "q_id": 77
         },
         {
             "query": "give me some movies that Christopher Nolan known for",
             "solution": [
-                "GET /search/person"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person"
             ],
             "q_id": 78
         },
         {
             "query": "Avatar versus Avatar: The Way of Water, which has a higher rating",
             "solution": [
-                "GET /search/movie",
-                "GET /search/movie"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/search/movie"
             ],
             "q_id": 79
         },
         {
             "query": "Show me some English movies rating no less than 7.0 and no earlier than 2021",
             "solution": [
-                "GET /discover/movie"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/discover/movie"
             ],
             "q_id": 80
         },
         {
             "query": "What is the genre of the movie Lord of the Ring?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}"
             ],
             "q_id": 81
         },
         {
             "query": "What is the birthday of the most popular person right now?",
             "solution": [
-                "GET /person/popular",
-                "GET /person/{person_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/person/popular",
+                "GET https://api.themoviedb.org/3/person/{person_id}"
             ],
             "q_id": 82
         },
         {
             "query": "give me a poster of the second season of Big Bang Theory",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/images"
             ],
             "q_id": 83
         },
         {
             "query": "What is the name of the third episod of the second season of Mandalorian?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}/season/{season_number}/episode/{episode_number}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}"
             ],
             "q_id": 84
         },
         {
             "query": "When is the bitrhday of the lead actor of the movie The Shawshank Redemptionn?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits",
-                "GET /person/{person_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}"
             ],
             "q_id": 85
         },
         {
             "query": "When is the birthday of the director of the movie The Shawshank Redemption?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits",
-                "GET /person/{person_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}"
             ],
             "q_id": 86
         },
         {
             "query": "Where is the headquarter of the company that created the movie The Shawshank Redemption?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}",
-                "GET /company/{company_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}",
+                "GET https://api.themoviedb.org/3/company/{company_id}"
             ],
             "q_id": 87
         },
         {
             "query": "Where is the headquarter of the company that created the collection Star Wars?",
             "solution": [
-                "GET /search/collection",
-                "GET /collection/{collection_id}",
-                "GET /company/{company_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/collection",
+                "GET https://api.themoviedb.org/3/collection/{collection_id}",
+                "GET https://api.themoviedb.org/3/company/{company_id}"
             ],
             "q_id": 88
         },
         {
             "query": "Who has an earlier release date, The Double Life of Veronique or Mulholland Drive?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}"
             ],
             "q_id": 89
         },
         {
             "query": "Is the director of Twin Peaks Season 1 and Mulholland Drive the same person?",
             "solution": [
-                "GET /search/tv",
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits",
-                "GET /tv/{tv_id}/season/{season_number}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits"
             ],
             "q_id": 90
         },
         {
             "query": "Where was the director of Mulholland Drive born?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits",
-                "GET /person/{person_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+                "GET https://api.themoviedb.org/3/person/{person_id}"
             ],
             "q_id": 91
         },
         {
             "query": "Is Mulholland Drive in the Top-10 rated list of the TMDB?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/top_rated"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/top_rated"
             ],
             "q_id": 92
         },
         {
             "query": "Who directed more movies, Akira Kurosawa or Spielberg?",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits"
             ],
             "q_id": 93
         },
         {
             "query": "What TV series has the director of Mulholland Drive directed?",
             "solution": [
-                "GET /search/movie",
-                "GET /person/{person_id}/tv_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/person/{person_id}/tv_credits"
             ],
             "q_id": 94
         },
         {
             "query": "Tell me about actor Scarlett Johansson's birthday",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}"
             ],
             "q_id": 95
         },
         {
             "query": "How many seasons of Sword Art Online are there?",
             "solution": [
-                "GET /search/tv",
-                "GET /tv/{tv_id}"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}"
             ],
             "q_id": 96
         },
         {
             "query": "Are Yui Aragaki and Gen Hoshino co-starring in We Married as Job?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits"
             ],
             "q_id": 97
         },
         {
             "query": "Who is older, by how many years, the director of film Barbie or the lead actor of television DEATH NOTE?",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/tv",
-                "GET /tv/{tv_id}/credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/credits",
+                "GET https://api.themoviedb.org/3/search/tv",
+                "GET https://api.themoviedb.org/3/tv/{tv_id}/credits"
             ],
             "q_id": 98
         },
         {
             "query": "Tell me about Katherine LaNasa's latest movie appearance.",
             "solution": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/person",
+                "GET https://api.themoviedb.org/3/person/{person_id}/movie_credits"
             ],
             "q_id": 99
         },
         {
             "query": "Give me one cover image of the movie Oppenheimer.",
             "solution": [
-                "GET /search/movie",
-                "GET /movie/{movie_id}/images"
-            ],
-            "noise": [
-                "GET /search/person",
-                "GET /person/{person_id}/movie_credits",
-                "GET /movie/top_rated",
-                "GET /movie/{movie_id}/credits",
-                "GET /search/collection",
-                "GET /collection/{collection_id}/images",
-                "GET /movie/{movie_id}/release_dates"
+                "GET https://api.themoviedb.org/3/search/movie",
+                "GET https://api.themoviedb.org/3/movie/{movie_id}/images"
             ],
             "q_id": 100
         }

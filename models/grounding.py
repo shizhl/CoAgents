@@ -87,7 +87,7 @@ Final Answer: I have made a new playlist called "Love Coldplay" containing Yello
 }
 
 
-SYSTEM_PLAN1 = """You are an agent that access external APIs and plans solution to user queries by selecting appreciate APIs in a logic order. 
+SYSTEM_PLAN = """You are an agent that access external APIs and plans solution to user queries by selecting appreciate APIs in a logic order. 
 I will provide your external APIs to answer the user's query, and each API is called via HTTP request. You should make a plan to use appreciative APIs by iterating three steps: Thought, API Selection, and Execution Result. 
 - Thought: In Thought step, you should reason current situation and specify which API to use. The Thought should be as specific as possible. It is better not to use pronouns in the plan, but to use the corresponding results obtained previously. For example, instead of "Get the most popular movie directed by this person", you should output "Get the most popular movie directed by Martin Scorsese (1032)". The Thought should be straightforward. If you want to search, sort, or filter, you can put the condition in your plan. For example, if the query is "Who is the lead actor of In the Mood for Love (person id 843)", instead of "Get the list of actors of In the Mood for Love", you should output "Get the lead actor of In the Mood for Love (843)".
 - API Selection: based on the Thought, the API Selection step selects a corresponding API from the following API list. You should just select the API from the below list and DO NOT replace any parameter in the API.  
@@ -142,7 +142,7 @@ Execution Result: The name and id of the director of the movie The Godfather (**
 Thought: Last, I am finished executing a plan and have the information the user asked.
 Final Answer: Francis Ford Coppola directed the top-1 rated movie The Godfather"""
 
-PLANNER_PROMPT1="""Using the following API to the user query. You can **only** use the API listed here.
+PLANNER_PROMPT="""Using the following API to the user query. You can **only** use the API listed here.
 
 Starting below, you should follow this format:
 User query: the query a User wants help with related to the API.
@@ -161,7 +161,7 @@ API List:
 User query: {query}
 {hidden}"""
 
-class PlanGPT(Base):
+class GroAgent(Base):
 
     def __init__(self, model='gpt-3.5-turbo', endpoints=None,role='PlanGPT',url=None):
         super().__init__(model=model, endpoints=endpoints,role=role,url=url)
@@ -177,42 +177,26 @@ class PlanGPT(Base):
             api_list.append(f'[{i}] {tool["url"]}\n## description: {description}')
         api_list = '\n'.join(api_list)
 
-        prompt = PLANNER_PROMPT1.format(icl_example=icl_example, query=query, api_list=api_list, hidden=hidden)
-        res = get_from_openai(model_name=self.model, temp=0, max_len=500, stop=['Thought:'],
-                              messages=[{'role': "system", 'content': SYSTEM_PLAN1},
+        prompt = PLANNER_PROMPT.format(icl_example=icl_example, query=query, api_list=api_list, hidden=hidden)
+        res = get_from_openai(model_name=self.model, temp=0, max_len=500, stop=['Thought:','Execution Result'],
+                              messages=[{'role': "system", 'content': SYSTEM_PLAN},
                                         {'role': 'user', 'content': prompt}])['content']
-        if 'Final Answer:' in res:
-            id1 = res.index('Final Answer:')
-            return res[:id1],res[id1:],'FINISH'
-        if 'Final answer' in res:
-            id1 = res.index('Final answer:')
-            return res[:id1],res[id1:],'FINISH'
+        if 'final answer' in res.lower():
+            res = res.lower()
+            id1 = res.index('final answer')
+            return 'Finish',res[id1:]
 
         if 'API Selection:' in res:
-            id1 = res.index('API Selection:')
-            thought = res[:id1].strip()
+            thought,action = res.split('API Selection:')
+            thought=self.normalize(thought)
+            action=self.normalize(action)
         else:
-            thought = res.split('\n')[0].strip()
-
-        if 'Execution Result:' in res:
-            id1 = res.index('API Selection:')
-            id2 = res.index('Execution Result:')
-            action = res[id1:id2].strip()
-            result = res[id2:].strip()
-        else:
+            thought=res.split('\n')[0].strip()
+            thought=self.normalize(thought)
             prompt += thought + '\nAPI Selection: '
-            action_result = get_from_openai(model_name=self.model, temp=0, max_len=500, stop='Thought: ',
-                                            messages=[{'role': "system", 'content': SYSTEM_PLAN1},
-                                                      {'role': 'user', 'content': prompt}])
-            try:
-                action, result = action_result.split('Execution Result:')
-            except:
-                action = action_result.split('\n')[0].strip()
-                prompt += action + '\nExecution Result: '
-                result = get_from_openai(model_name=self.model, temp=0, max_len=500, stop='Thought: ',
-                                         messages=[{'role': "system", 'content': SYSTEM_PLAN1},
-                                                   {'role': 'user', 'content': prompt}])
-        self.add_traj(self.normalize(thought))
-        return (self.normalize(thought),
-                self.normalize(action),
-                self.normalize(result))
+            action = get_from_openai(model_name=self.model, temp=0, max_len=500, stop='Thought: ',
+                                    messages=[{'role': "system", 'content': SYSTEM_PLAN},
+                                              {'role': 'user', 'content': prompt}])['content']
+            action=self.normalize(action)
+
+        return self.normalize(thought),self.normalize(action)

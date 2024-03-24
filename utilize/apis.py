@@ -4,11 +4,13 @@ from openai import OpenAI
 import time
 import random
 
+# we provide the
 api_keys_list=[
-    'sk-ZmVeKnYDii42NZzVD245Af89F04b469dB9Db08C9B85aCf30'
-]
 
-def get_from_openai(model_name='gpt-3.5-turbo',base_url=None,api_key=None,
+]
+BASE_URL = ''
+
+def get_from_openai(model_name='gpt-3.5-turbo',api_key=None,
         messages=None, prompt=None,stop=None,max_len=1000, temp=1, n=1,
         json_mode=False, usage=False):
     """
@@ -17,7 +19,7 @@ def get_from_openai(model_name='gpt-3.5-turbo',base_url=None,api_key=None,
     for i in range(10):
         try:
             client = OpenAI(api_key=api_keys_list[random.randint(0, 100000) % len(api_keys_list)] if api_key==None else api_key,
-                         base_url='https://api.aiguoguo199.com/v1' if base_url==None else base_url)
+                         base_url=BASE_URL)
             kwargs={
                 "model":model_name, 'max_tokens':max_len,"temperature":temp,
                 "n":n, 'stop':stop, 'messages':messages,
