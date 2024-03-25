@@ -37,7 +37,7 @@ openai==1.7.1
   ]
   ```
 
-  You can add multiple APIs since we will randomly select one APIs from api_keys_list to request the OpenAI backend for each API request. The Random selection strategy is employed to improve the quota limitation for one API (see the OpenAI quota for the details).
+  You can add multiple APIs since we will randomly select one APIs from `api_keys_list` to request the OpenAI backend for each API request. The Random selection strategy is employed to improve the quota limitation for one API (see the OpenAI quota for the details).
 
   You can also configure the base URL for your OpenAI APIs
 
