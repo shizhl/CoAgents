@@ -14,12 +14,6 @@ class Base:
                 self.name2doc[f"{base_url}{line['url']}"]=line
         else:
             self.name2doc=None
-        self.traj=[]
-        self.token=[]
-
-    def add_traj(self, output):
-        self.traj.append({'role':self.role,'content':output})
-
     def overlap(self,s1,s2):
         s1=s1.split('/')
         s1=[e.strip() for e in s1]
