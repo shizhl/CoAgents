@@ -178,25 +178,28 @@ class GroAgent(Base):
         api_list = '\n'.join(api_list)
 
         prompt = PLANNER_PROMPT.format(icl_example=icl_example, query=query, api_list=api_list, hidden=hidden)
-        res = get_from_openai(model_name=self.model, temp=0, max_len=500, stop=['Thought:','Execution Result'],
-                              messages=[{'role': "system", 'content': SYSTEM_PLAN},
-                                        {'role': 'user', 'content': prompt}])['content']
-        if 'final answer' in res.lower():
-            res = res.lower()
-            id1 = res.index('final answer')
-            return 'Finish',res[id1:]
+        res=''
+        for i in range(0,4):
+            res = get_from_openai(model_name=self.model, temp=0, max_len=1000, stop=['Execution Result'],
+                                  messages=[{'role': "system", 'content': SYSTEM_PLAN},
+                                            {'role': 'user', 'content': prompt}])['content']
+            if 'final answer' in res.lower():
+                res = res.lower()
+                id1 = res.index('final answer')
+                return 'Finish',res[id1:]
+            if 'API Selection:' in res:
+                thought, action = res.split('API Selection:')
+                thought = self.normalize(thought)
+                action = self.normalize(action)
+                return thought,action
 
-        if 'API Selection:' in res:
-            thought,action = res.split('API Selection:')
-            thought=self.normalize(thought)
-            action=self.normalize(action)
-        else:
-            thought=res.split('\n')[0].strip()
-            thought=self.normalize(thought)
-            prompt += thought + '\nAPI Selection: '
-            action = get_from_openai(model_name=self.model, temp=0, max_len=500, stop='Thought: ',
-                                    messages=[{'role': "system", 'content': SYSTEM_PLAN},
-                                              {'role': 'user', 'content': prompt}])['content']
-            action=self.normalize(action)
+        res=[e for e in res.split('\n') if e.strip()!='']
+        thought = '\n'.join(res)
+        thought=self.normalize(thought)
+        prompt += thought + '\nAPI Selection: '
+        action = get_from_openai(model_name=self.model, temp=0, max_len=500, stop='Thought: ',
+                                messages=[{'role': "system", 'content': SYSTEM_PLAN},
+                                          {'role': 'user', 'content': prompt}])['content']
+        action=self.normalize(action)
 
         return self.normalize(thought),self.normalize(action)
