@@ -27,7 +27,7 @@ def run(data, model_name, headers, endpoints, url):
 
     for line in tqdm(data):
         logger.info(f'Query: {line["query"]}')
-        logger.info(f'Query: {line["solution"]}')
+        logger.info(f'Query: {line["solution"]}') # The most simple setting for intuitive illustration. You can add more tools based on your own setting
         tools = [name2doc[tool] for tool in line['solution']]
 
         # initialize the three agents
